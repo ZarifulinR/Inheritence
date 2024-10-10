@@ -10,6 +10,7 @@ namespace Inheritence
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
