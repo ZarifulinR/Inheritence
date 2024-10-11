@@ -12,6 +12,9 @@ namespace Academy
         public string FirstName { get; set; }
         public int Age { get; set; }
         // Constructor
+        public Human() { }
+        
+        
         public Human(string lastName, string firstName, int age)
         {
             LastName = lastName;
