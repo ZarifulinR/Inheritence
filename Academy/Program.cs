@@ -35,8 +35,8 @@ namespace Academy
 				new Teacher("Feaktistov", "Eduard", 86, "Chemistry", 50),
 				new Graduate("Ivanov", "Ivan", 22, "math", "WW_220", 95, 96,"math")
 			};
-			Print(group);
-			Save(group, "File.txt");
+			Streamer.Print(group);
+			Streamer.Save(group, "File.CSV");
 #if HOME_WORK
 			//group.ToList().ForEach(i => Console.WriteLine(i.ToString()));
 			StreamWriter sw = new StreamWriter("File.txt");
@@ -64,24 +64,7 @@ namespace Academy
 
 
 		}
-			static void Print(Human[] group)
-			{
-				for (int i = 0; i < group.Length; i++)
-				{
-					Console.WriteLine(group[i]);
-				}
-				Console.WriteLine();
-			}
-			 static void Save(Human[] group,string filename)
-			{
-				StreamWriter sw =  new StreamWriter(filename);
-				for (int i = 0; i < group.Length; i++)
-				{
-					sw.WriteLine(group[i]);
-				}
-				sw.Close();
-				Process.Start("notepad",filename);
-			}
+			
 		
 	}
 }

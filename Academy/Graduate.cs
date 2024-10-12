@@ -33,6 +33,10 @@ namespace Academy
             string base_string = base.ToString();
             return base_string +$" {Subject}";
         }
-    }
+		public override string ToFileString()
+		{
+			return base.ToFileString()+$",{Speciality}";
+		}
+	}
     
 }
