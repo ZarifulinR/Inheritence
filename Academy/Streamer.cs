@@ -27,7 +27,7 @@ namespace Academy
 				sw.WriteLine(group[i].ToFileString());
 			}
 			sw.Close();
-			Process.Start("notepad", filename);
+			Process.Start("excel", filename);
 		}
 	}
 }
