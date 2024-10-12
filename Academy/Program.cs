@@ -1,4 +1,5 @@
-﻿using System;
+﻿//#define HOME_WORK
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,42 +9,79 @@ using System.IO;
 
 namespace Academy
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            //Human human = new Human("Montana", "Antonia", 25);
-            //human.Print();
-            //Console.WriteLine(human);
-            //Student student = new Student("Pinkman", "Jessie", 22, "Chemistry", "WW_220", 95, 96);
-            //Console.WriteLine(student);
-            //student.Print();
-            //Teacher teacher = new Teacher("White", "Walter", 50, "Chemistry", 25);
-            //Console.WriteLine(teacher);
-            //teacher.Print();
-            //Graduate graduate = new Graduate("ivanov", "ivan", 22, "math", "WW_220", 95, 96,"math");
-            //Console.WriteLine(graduate);
-            //graduate.Print();
-            Human[] group = new Human[]
-            {
-                new Student ("Pinkman", "Jessie", 23, "Chemistry", "WW_220", 95, 96),
-                new Student("Korob", "Stan", 20, "Chemistry", "WW_220", 12, 11),
-                new Student("Slavin", "Stepan", 21, "Chemistry", "WW_220", 50, 50),
-                new Teacher("White", "Walter", 50, "Chemistry", 25),
-                new Teacher("Semenov", "Vasya", 37, "Chemistry", 12),
-                new Teacher("Feaktistov", "Eduard", 86, "Chemistry", 50),
-                new Graduate("ivanov", "ivan", 22, "math", "WW_220", 95, 96,"math")
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			//Human human = new Human("Montana", "Antonia", 25);
+			//human.Print();
+			//Console.WriteLine(human);
+			//Student student = new Student("Pinkman", "Jessie", 22, "Chemistry", "WW_220", 95, 96);
+			//Console.WriteLine(student);
+			//student.Print();
+			//Teacher teacher = new Teacher("White", "Walter", 50, "Chemistry", 25);
+			//Console.WriteLine(teacher);
+			//teacher.Print();
+			//Graduate graduate = new Graduate("ivanov", "ivan", 22, "math", "WW_220", 95, 96,"math");
+			//Console.WriteLine(graduate);
+			//graduate.Print();
+			Human[] group = new Human[]
+			{
+				new Student ("Pinkman", "Jessie", 23, "Chemistry", "WW_220", 95, 96),
+				new Student("Korob", "Stan", 20, "Chemistry", "WW_220", 12, 11),
+				new Student("Slavin", "Stepan", 21, "Chemistry", "WW_220", 50, 50),
+				new Teacher("White", "Walter", 50, "Chemistry", 25),
+				new Teacher("Semenov", "Vasya", 37, "Chemistry", 12),
+				new Teacher("Feaktistov", "Eduard", 86, "Chemistry", 50),
+				new Graduate("Ivanov", "Ivan", 22, "math", "WW_220", 95, 96,"math")
+			};
+			Print(group);
+			Save(group, "File.txt");
+#if HOME_WORK
+			//group.ToList().ForEach(i => Console.WriteLine(i.ToString()));
+			StreamWriter sw = new StreamWriter("File.txt");
+			//Console.WriteLine(group.ToString());
+			//group.ToList().ForEach(i => sw.WriteLine(i.ToString()));
+			//for (int i = 0; i < group.Length; i++)
+			//{
+			//	sw.WriteLine(group[i]);
+			//}
+			foreach (Human i in group)
+			{
+				sw.WriteLine(i);
+			}
+			sw.Close();
+			StreamReader sr = new StreamReader("File.txt");
+			while (!sr.EndOfStream)
+			{
+				string buffer = sr.ReadLine();
+				Console.WriteLine(buffer);
+			}
 
-            };
-            group.ToList().ForEach(i => Console.WriteLine(i.ToString()));
-            StreamWriter sw = new StreamWriter("File.txt");
-            foreach (var item in group.ToString())
-            {
-                sw.WriteLine(group);
-            }
-            
-           
-        }
-        
-    }
+			sr.Close();
+			Process.Start("notepad", "File.txt"); 
+#endif
+
+
+		}
+			static void Print(Human[] group)
+			{
+				for (int i = 0; i < group.Length; i++)
+				{
+					Console.WriteLine(group[i]);
+				}
+				Console.WriteLine();
+			}
+			 static void Save(Human[] group,string filename)
+			{
+				StreamWriter sw =  new StreamWriter(filename);
+				for (int i = 0; i < group.Length; i++)
+				{
+					sw.WriteLine(group[i]);
+				}
+				sw.Close();
+				Process.Start("notepad",filename);
+			}
+		
+	}
 }

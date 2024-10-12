@@ -26,11 +26,12 @@ namespace Academy
         public override void  Print()
         {
             base.Print();
-            Console.WriteLine($"{Subject }");
+            Console.WriteLine($" {Subject }");
         }
         public override string ToString()
         {
-            return base.ToString()+$" {Subject}";
+            string base_string = base.ToString();
+            return base_string +$" {Subject}";
         }
     }
     

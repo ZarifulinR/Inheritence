@@ -8,7 +8,9 @@ namespace Academy
 {
     class Teacher:Human
     {
-        public string Speciality { get; set; }
+        static readonly int SPECIALITY_WIDTH = 24;
+        static readonly int EXPERIENCE_WIDTH = 5;
+        public string Speciality { get; set;  }
         public int Experience { get; set; }
         public Teacher
             (
@@ -30,7 +32,7 @@ namespace Academy
         }
         public override string ToString()
         {
-            return base.ToString()+$" {Speciality} {Experience}";
+            return base.ToString()+$" {Speciality.PadRight(SPECIALITY_WIDTH)} {Experience.ToString().PadRight(EXPERIENCE_WIDTH)}";
         }
     }
 }
