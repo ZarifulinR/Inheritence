@@ -1,4 +1,5 @@
 ﻿//#define HOME_WORK
+//#define LOAD_CHEK
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,7 @@ namespace Academy
 			//Graduate graduate = new Graduate("ivanov", "ivan", 22, "math", "WW_220", 95, 96,"math");
 			//Console.WriteLine(graduate);
 			//graduate.Print();
+#if LOAD_CHEK
 			Human[] group = new Human[]
 			{
 				new Student ("Pinkman", "Jessie", 23, "Chemistry", "WW_220", 95, 96),
@@ -35,8 +37,9 @@ namespace Academy
 				new Teacher("Feaktistov", "Eduard", 86, "Chemistry", 50),
 				new Graduate("Ivanov", "Ivan", 22, "math", "WW_220", 95, 96,"math")
 			};
-			Streamer.Print(group);
-			Streamer.Save(group, "File.CSV");
+			//Streamer.Print(group);
+			 Streamer.Save(group, "File.CSV");  
+#endif
 #if HOME_WORK
 			//group.ToList().ForEach(i => Console.WriteLine(i.ToString()));
 			StreamWriter sw = new StreamWriter("File.txt");
@@ -61,10 +64,12 @@ namespace Academy
 			sr.Close();
 			Process.Start("notepad", "File.txt"); 
 #endif
+			Human[] group = Streamer.Load("File.CSV");
 
+			Streamer.Print(group);
 
 		}
-			
-		
+
+
 	}
 }
