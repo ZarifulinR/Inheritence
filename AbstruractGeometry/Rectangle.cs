@@ -35,7 +35,8 @@ namespace AbstractGeometry
 		public override double GetArea() => Width * Heigth;
 
 		public override double GetPerimeter() => 2 * (Width + Heigth);
-
+		public override double GetSquare() => (Width * Heigth);
+		
 		public override void Draw(PaintEventArgs e)
 		{
 			Pen pen = new Pen(Color, LineWidth);

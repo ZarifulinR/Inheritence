@@ -24,6 +24,8 @@ namespace AbstractGeometry
 			
 			Rectangle rectangle = new Rectangle(100, 50, 100, 100, 3, System.Drawing.Color.Red);
 			rectangle.Info(e);
+			Circle circle = new Circle(1, 35, 110, 400, System.Drawing.Color.Gold);
+			circle.Info(e);
 		}
 		[DllImport("kernel32.dll")]
 		public static extern IntPtr GetConsoleWindow();
