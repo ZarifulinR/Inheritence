@@ -10,9 +10,9 @@ namespace AbstractGeometry
 {
 	class Circle:Shape
 	{
-		double PI = 3.14;
 		double radius;
-		public double Radius
+		
+		public double Radius 
 		{
 			get => radius;
 			set => radius = SizeFilter(value);
@@ -23,13 +23,13 @@ namespace AbstractGeometry
 		{
 			Radius = radius;
 		}
-		public override double GetArea() => PI * Math.Pow(radius,2);
-		public override double GetPerimeter()=> 2 * PI * radius;
-		public override double GetSquare() => PI * Math.Pow(radius, 2);
+		public override double GetArea() => Math.PI * Math.Pow(radius,2);
+		public override double GetPerimeter()=> 2 * Math.PI * radius;
+		public override double GetSquare() => Math.PI * Math.Pow(radius, 2);
 		public override void Draw(PaintEventArgs e)
 		{
 			Pen pen = new Pen(Color, LineWidth);
-			e.Graphics.DrawEllipse(pen, StartX,StartY, LineWidth,(int)radius);
+			e.Graphics.DrawEllipse(pen, StartX,StartY, (int)radius, (int)radius);
 		}
 
 	}

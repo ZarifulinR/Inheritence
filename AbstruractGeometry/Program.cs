@@ -22,9 +22,11 @@ namespace AbstractGeometry
 				);
 			PaintEventArgs e = new PaintEventArgs(graphics, window_rect);
 			
-			Rectangle rectangle = new Rectangle(100, 50, 100, 100, 3, System.Drawing.Color.Red);
+			Rectangle rectangle = new Rectangle(100, 50, 450, 100, 3, System.Drawing.Color.Red);
 			rectangle.Info(e);
-			Circle circle = new Circle(1, 35, 110, 400, System.Drawing.Color.Gold);
+			Circle circle = new Circle(70, 570, 95, 3, System.Drawing.Color.Gold);
+			Square square = new Square(75, 660, 100, 1, System.Drawing.Color.Aqua);
+			square.Info(e);
 			circle.Info(e);
 		}
 		[DllImport("kernel32.dll")]
