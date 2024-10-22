@@ -8,7 +8,7 @@ using System.Drawing;
 
 namespace AbstractGeometry
 {
-	class Square:Rectangle
+	class Square:Rectangle,IHaveDiagonal
 	{
 		
 		public Square
