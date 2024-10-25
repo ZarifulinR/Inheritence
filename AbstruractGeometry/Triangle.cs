@@ -17,5 +17,6 @@ namespace AbstractGeometry
 			Console.WriteLine($"Высота треугольника:{GetHwight()} ");
 			base.Info(e);
 		}
+
 	}
 }

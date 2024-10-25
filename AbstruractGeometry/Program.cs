@@ -32,6 +32,8 @@ namespace AbstractGeometry
 			i_triangle.Info(e);
 			EquilLateralTriangle e_triangle = new EquilLateralTriangle(100, 450, 160, 3, Color.GreenYellow);
 			e_triangle.Info(e);
+			RightTriangle rightTriangle = new RightTriangle(80, 80, 650, 270,3, Color.BurlyWood);
+			rightTriangle.Info(e);
 		}
 		[DllImport("kernel32.dll")]
 		public static extern IntPtr GetConsoleWindow();
